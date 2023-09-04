@@ -54,7 +54,11 @@ def reset():
     pygame.draw.rect(screen,"white",button9,0,10)
     pressed_list = {"1":0,"2":0,"3":0,"4":0,"5":0,"6":0,"7":0,"8":0,"9":0}
 def get_danger():
-    print(list(pressed_list.items())[1])
+    print(list(pressed_list.items()))
+    player_list = []
+    for val in list(pressed_list.items()):
+        if val[1] == True:
+            player_list.append(val[0])
 get_danger()
 def com_play(arg:str):
     global turn_num
